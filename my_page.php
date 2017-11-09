@@ -7,8 +7,14 @@
 <title>Title of the document</title>
 </head>
 
+
+
 <body>
+
+	<h1>hej hopp </h1>
+
   <?php
+
   ?>
 </body>
 
