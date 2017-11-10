@@ -1,6 +1,6 @@
-DROP DATABASE skidloppet1;
-CREATE DATABASE skidloppet1;
-USE skidloppet1;
+DROP DATABASE skidloppet;
+CREATE DATABASE skidloppet;
+USE skidloppet;
 
 create table lopp(
 	ordningsnr		integer,
@@ -21,6 +21,8 @@ create table users(
     fornamn		varchar(255),
     efternamn	varchar(255),
     mobilnr		integer,
+    kon			varchar(255),
+    alder		integer,
     primary key (kundnr)
 )engine = innodb;
 
@@ -132,21 +134,22 @@ create table feedback(
     
 )engine=innodb;
 
-insert into lopp values ('1', 'Dalloppet', '2017-11-07 08:00:00', 'skidlopp', '1', 'fulldistans');
+insert into lopp values ('1', 'Dalloppet full', '2017-11-07 08:00:00', 'skidlopp', '1', 'fulldistans');
 
 insert into users(usrMail, usrPw) values('mail','password');
 
 select * from lopp;
-insert into lopp values ('2', 'Dalloppet', '2017-11-07 08:00:00 AM', 'skidlopp', '0', 'öppet spår');
+insert into lopp values ('2', 'Dalloppet ÖS', '2017-11-07 08:00:00 AM', 'skidlopp', '0', 'öppet spår');
 insert into lopp values ('3', 'Dalloppet halva', '2017-11-07 08:00:00 AM', 'skidlopp', '0', 'halv');
 insert into lopp values ('4', 'Dalloppet tjej', '2017-11-07 08:00:00 AM', 'skidlopp', '1', 'halv');
 insert into lopp values ('5', 'Dalloppet kort', '2017-11-07 08:00:00 AM', 'skidlopp', '0', 'tredjedel');
-insert into lopp values ('6', 'stafetten', '2017-11-07 08:00:00 AM', 'skidlopp', '1', 'full');
+insert into lopp values ('6', 'Stafetten', '2017-11-07 08:00:00 AM', 'skidlopp', '1', 'full');
 
-insert into users(usrMail, usrPw, fornamn, efternamn, mobilnr) values ('melker@hotmail.com', 'längdskida', 'Melker', 'Schörling', '070-2335899');
-insert into users(usrMail, usrPw, fornamn, efternamn, mobilnr) values ('bananen@hotmail.com', 'staven', 'Bo', 'Hedman', '070-2345898');
-insert into users(usrMail, usrPw, fornamn, efternamn, mobilnr) values ('snusen@hotmail.com', 'valla', 'Martin', 'Svensson', '070-2325779');
-insert into users(usrMail, usrPw, fornamn, efternamn, mobilnr) values ('apan@hotmail.com', 'snöbacken', 'Tommy', 'Larsson', '070-2126777');
+insert into users(usrMail, usrPw, fornamn, efternamn, mobilnr, kon, alder) values ('melker@hotmail.com', 'längdskida', 'Melker', 'Schörling', '070-2335899', 'man', '20');
+insert into users(usrMail, usrPw, fornamn, efternamn, mobilnr, kon, alder) values ('bananen@hotmail.com', 'staven', 'Lina', 'Andersson', '070-2345898', 'kvinna', '25');
+insert into users(usrMail, usrPw, fornamn, efternamn, mobilnr, kon, alder) values ('snusen@hotmail.com', 'valla', 'Martin', 'Svensson', '070-2325779', 'man', '27');
+insert into users(usrMail, usrPw, fornamn, efternamn, mobilnr, kon, alder) values ('apan@hotmail.com', 'snöbacken', 'Karin', 'Bengtsson', '070-2126777', 'kvinna', '32');
+insert into users(usrMail, usrPw, fornamn, efternamn, mobilnr, kon, alder) values ('gusten@hotmail.com', 'granen', 'Sven', 'Svensson', '070-2136855', 'man', '48');
 
 insert into adress values ('1', 'stolpvägen 1', '521 31', 'Sverige', '0515-52131');
 insert into adress values ('2', 'banvägen 1', '522 58', 'Sverige', '0500-50010');
