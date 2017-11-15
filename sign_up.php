@@ -9,7 +9,7 @@
 	<script src="script.js"></script>
 </head>
 <body>
-<h1 align="center" class="header">Sign up</h1>
+<h1 align="center" id="header">Sign up</h1>
 <form method="post" action="">
   <div class="container">
     <label><b>Email</b></label>
@@ -29,33 +29,29 @@
 <?php	
 	include("connection.php");
 	session_start();
-
 	
 	if(isset($_POST['usrMail'],$_POST['usrPw'])){
 		$mail = mysqli_real_escape_string($dbc,$_POST['usrMail']);
-		$password = mysqli_real_escape_string($dbc,$_POST['usrPw']);
+		$password = mysqli_real_escape_string($dbc,$_POST['usrPw']);	
 		
-		$sql = "SELECT * FROM users WHERE usrMail = '$mail' and usrPw = '$password'";
-		
+		$sql = "SELECT * FROM users WHERE usrMail = '$mail'";
 		$result = mysqli_query($dbc,$sql);
-		
 		$count = mysqli_num_rows($result);
 		 
 		if($count == 0) {
+			$msg = "Kör hit";
+			
 			$_SESSION['login_user'] = $mail;
-			
-			$sql2 = "INSERT INTO users(usrMail, usrPw) values('$mail','$password')";
+			$options = [
+			'cost' => 11,
+			];
+			$hashed = password_hash($password, PASSWORD_BCRYPT, $options);
+			$_SESSION['hashed_pw'] = $hashed;
+			var_dump($_SESSION['hashed_pw']);
+			$sql2 = "INSERT INTO users(usrMail, usrPw) values('$mail','$hashed')";
 			$result = mysqli_query($dbc,$sql2);
+			var_dump($result);
 			header("location: login.php");
-			
-			// $file = fopen("users.csv","u");
-			
-			// foreach ($mail as $line and $password as $line2)
-			// {
-				// fputcsv($file,explode(',',$line,$line2));
-			// }
-			// fclose($file);
-			// echo "<pre>'$file'</pre>";
 			
 		} else {
 			$error = "Your Login Name or Password is invalid";

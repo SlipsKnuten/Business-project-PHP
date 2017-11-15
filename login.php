@@ -5,36 +5,41 @@
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body>
-<h1 class="header" align="center">Login</h1>
-<form method="post" action="#">
+
+<h1 id="header" align="center">Login</h1>
+
+<form method="post" action="">
   <div class="container">
     <label><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="usrMail" id="inputs" required>
+    <input type="text" placeholder="Enter Email" name="usrMail" required>
 	
 	<label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="usrPw" id="inputs" required>
-	<button type="submit" class="signupbtn">Sign Up</button>
+    <input type="password" placeholder="Enter Password" name="usrPw" required>
+     
+	<div class="clearfix">
+      <button type="submit" class="signupbtn">Login</button>
+    </div>
+  </div>
+</form>
+
 <?php
 	include("connection.php");
 	session_start();
-
 	
 	if(isset($_POST['usrMail'], $_POST['usrPw'])){
 		$mail = mysqli_real_escape_string($dbc,$_POST['usrMail']);
 		$password = mysqli_real_escape_string($dbc,$_POST['usrPw']);
 		
-		$sql = "SELECT * FROM users WHERE usrMail = '$mail' and usrPw = '$password'";
+		$sql = "SELECT * FROM users WHERE usrMail = '$mail'";
+		$result = mysqli_query($dbc,$sql);	
 		$result = mysqli_query($dbc,$sql);
-		
-		$count = mysqli_num_rows($result);
-		 
-		if($count == 1) {
-			$_SESSION['login_user'] = $mail;
-			$_SESSION['password_user'] = $password;
+		$pw = mysqli_fetch_array($result);	
+		$currentpw = $pw['usrPw'];
+		if(password_verify($password,$currentpw)){
 			header("location: my_page.php");
-		} else {
-			$error = "Your Login Name or Password is invalid";
-			echo "<script type='text/javascript'>alert('$error');</script>";	
+		}
+		else{
+			echo "Invalid password";
 		}
 	}
 ?>
