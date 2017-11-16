@@ -13,6 +13,7 @@
 		$fornamn = $_POST['fornamn'];
 		$efternamn = $_POST['efternamn'];
 		$mobilnr = $_POST['mobilnr'];
+
 		$kon =$_POST['kon'];
 		$alder =$_POST['alder'];
 		$oldmail = $_SESSION['login_user'];
@@ -28,12 +29,16 @@
 			var_dump($test);
 		$_SESSION['userInfo'] = $test;
 		// var_dump($userInfo);
+		$oldmail = $_SESSION['login_user'];
+		$sql = "UPDATE users SET usrMail = '$mail', fornamn = '$fornamn', efternamn = '$efternamn', mobilnr = '$mobilnr' WHERE usrMail = '$oldmail'";
+		mysqli_query($dbc,$sql);
 		$_SESSION['login_user'] = $mail; 
 	}	
 ?>
 <style>
 * {box-sizing: border-box}
 body {font-family: "Lato", sans-serif;}
+
 
 /* Style the tab */
 div.tab {
@@ -115,6 +120,80 @@ input{
   <li><a href="sign_up.php">Registrera</a></li>
 </ul>
 
+
+/* Style the tab */
+div.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 30%;
+    height: 300px;
+	margin-top:100px;
+	margin-left:130px;
+	margin-bottom:1000px;
+	padding-bottom:700px;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+	
+	font-family: 'Raleway', sans-serif;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 50%;
+    border-left: none;
+    height: 300px;
+	margin-top:100px;
+	margin-bottom:1000px;
+	padding-bottom:700px;
+	color:#414051;
+	font-family: 'Raleway', sans-serif;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+display: none; 
+-webkit-appearance: none;
+margin: 0; 
+}
+#update{
+	margin-top:15px;
+	padding:5px;
+}
+.statictext{
+	color:#be8ea6;
+}
+input{
+	color:#8e8ebe;
+}
+</style>
+</head>
+<body>
 <h1 class="statictext" id="header">Dina sidor</h1>
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'Mina_sidor')" id="defaultOpen">Mina sidor</button>
@@ -144,9 +223,6 @@ input{
 		echo "Ålder <input type='text' class='statictext' name='alder' value='".$row['alder']."'><br>";
 		echo "Mobilnummer <input type='text' class='statictext' name='mobilnr' onkeypress='validate(event)' value='".$row['mobilnr']."'><br>"; /*Går inte att läsa av 0:or pga integer i databasen*/
 	}
-	
-	
-	
 	echo "<input type='submit' value='Uppdatera' id='update'>";
 	echo "</form>";
 	
@@ -162,6 +238,11 @@ input{
 <div id="Min_statistik" class="tabcontent">
   <h3>Min statistik</h3>
   <p>Här kommer köp</p>
+
+<div id="Mina_köp" class="tabcontent">
+  <h3>Mina köp</h3>
+  <p>Här kommer köp</p> 
+
 </div>
 
 <div id="Min_statistik" class="tabcontent">

@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-	
+
 </head>
 <body>
 
@@ -38,6 +38,7 @@
 		$currentpw = $pw['usrPw'];
 		if(password_verify($password,$currentpw)){
 			header("location: my_page.php");
+
 			$_SESSION['logged_in'] = true;
 			$test = $_SESSION['logged_in'];
 			$js_out = json_encode($test);
@@ -52,6 +53,7 @@
 			// $users = $_SESSION['userInfo'];
 			// var_dump($result);
 			}
+		}
 		else{
 			echo "Invalid password";
 		}
