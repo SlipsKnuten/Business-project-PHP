@@ -3,7 +3,6 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-<<<<<<< HEAD
 	<script src="script.js"></script>
 </head>
 <body>
@@ -14,12 +13,8 @@
   <li><a href="sign_up.php">Registrera</a></li>
   <li><a href="login.php">Logga in</a></li>
 </ul>
-=======
-	
 </head>
 <body>
-
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 <h1 id="header" align="center">Login</h1>
 
 <form method="post" action="">
@@ -37,7 +32,6 @@
 </form>
 
 <?php
-<<<<<<< HEAD
 include("connection.php");
 session_start();
 
@@ -72,7 +66,6 @@ if(isset($_POST['usrMail'], $_POST['usrPw'])){
 	
 	else{
 		echo "<script type='text/javascript'>alert('Invalid password')</script>";
-=======
 	include("connection.php");
 	session_start();
 	
@@ -105,7 +98,6 @@ if(isset($_POST['usrMail'], $_POST['usrPw'])){
 		else{
 			echo "Invalid password";
 		}
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 	}
 }
 ?>
