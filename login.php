@@ -3,7 +3,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-
+	
 </head>
 <body>
 
@@ -38,22 +38,21 @@
 		$currentpw = $pw['usrPw'];
 		if(password_verify($password,$currentpw)){
 			header("location: my_page.php");
-
 			$_SESSION['logged_in'] = true;
 			$test = $_SESSION['logged_in'];
 			$js_out = json_encode($test);
 			// var_dump($js_out);
 			$_SESSION['login_user'] = $mail;
-			$users = "SELECT fornamn, efternamn, kon, alder, mobilnr FROM users WHERE usrMail = '$mail'";
+			$users = "SELECT * FROM users WHERE usrMail = '$mail'";
 			$result = mysqli_query($dbc,$users);	
-			var_dump($result);
-			$test = mysqli_fetch_array($result);	
-			var_dump($test);
-			$_SESSION['userInfo'] = $test;
-			// $users = $_SESSION['userInfo'];
 			// var_dump($result);
+			$test = mysqli_fetch_array($result);	
+			// echo "<pre>";var_dump($test);
+			// echo "</pre>";
+			$_SESSION['userInfo'] = $test;
+			$users = $_SESSION['userInfo'];
+			// var_dump($users);
 			}
-		}
 		else{
 			echo "Invalid password";
 		}
