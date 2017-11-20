@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<<<<<<< HEAD
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-=======
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
-  <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 <title>Skidor</title>
 </head>
 <body>
@@ -17,7 +14,6 @@
   <li><a href="index.php">Bokningar</a></li>
   <li><a href="about_us.php">Om oss</a></li>
   <li><a href="sign_up.php">Registrera</a></li>
-<<<<<<< HEAD
   <li><a href="login.php">Logga in</a></li>
 </ul>
 <h1 class="statictext" id="header" onclick="home()">Skidor</h1>
@@ -66,7 +62,6 @@ if(isset($_POST['ordnr'])){
 	// var_dump($x);
 }
 ?> 
-=======
 </ul>
 
 <h1 class="statictext" id="header">Skidor</h1>
@@ -123,8 +118,6 @@ $loginuser = $_SESSION['userInfo'];
 	
 	
 	?> 
-
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 </div> 
 </body>
 </html>
