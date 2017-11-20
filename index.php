@@ -1,26 +1,22 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<<<<<<< HEAD
 	<meta charset="UTF-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="script.js"></script>
 	<title>Home page</title>
-=======
   <meta charset="UTF-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
   
   
 <title>Title of the document</title>
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 </head>
 
 <?php
 session_start();
-<<<<<<< HEAD
 	if(isset($_SESSION['logged_in'])){
 		$fruit = $_SESSION['logged_in'];
 	}
@@ -44,8 +40,7 @@ session_start();
 	}
 	else{
 			alert("You are not logged in!");
-		}
-=======
+	}
 ?>
 
 <?php
@@ -64,7 +59,6 @@ session_start();
 	else{
 			alert("You are not logged in!");
 			}
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 	}
 </script>
 
@@ -72,10 +66,6 @@ session_start();
 
 
 <style>
-
-<<<<<<< HEAD
-
-=======
 	ul {
 		list-style-type: none;
 		margin: 0;
@@ -111,8 +101,6 @@ div.desc {
     width: 180px;
     text-align: center;
 	}
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
-	
 </style>
 
 <body>
@@ -122,16 +110,12 @@ div.desc {
   <li><a href="index.php">Bokningar</a></li>
   <li><a href="about_us.php">Om oss</a></li>
   <li><a href="sign_up.php">Registrera</a></li>
-<<<<<<< HEAD
   <li><a href="login.php">Logga in</a></li>
-=======
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 </ul>
 
 
 <h1 id="header">Våra lopp</h1>
 
-<<<<<<< HEAD
 <div id="wrapper">
 	<ul class="pics">
 		<li class="pic">
@@ -156,7 +140,6 @@ div.desc {
 		</li>
 	</ul>
 </div>
-=======
 <div class="gallery">
 	
   <a href="booking_lopning.php">
@@ -188,7 +171,6 @@ div.desc {
   $test = $_SESSION['logged_in'];
   var_dump($test);
   ?>
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 </body>
 
 </html>
