@@ -7,7 +7,6 @@
 	<script src="script.js"></script>
 </head>
 <body>
-<<<<<<< HEAD
 <ul>
   <li><a href="my_page.php">Mina Sidor</a></li>
   <li><a href="index.php">Bokningar</a></li>
@@ -15,8 +14,6 @@
   <li><a href="sign_up.php">Registrera</a></li>
   <li><a href="login.php">Logga in</a></li>
 </ul>
-=======
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 <h1 align="center" id="header">Sign up</h1>
 <form method="post" action="">
   <div class="container">
@@ -35,7 +32,6 @@
   </div>
 </form>
 <?php	
-<<<<<<< HEAD
 include("connection.php");
 session_start();
 
@@ -64,7 +60,6 @@ if(isset($_POST['usrMail'],$_POST['usrPw'])){
 	} else {
 		$error = "Your Login Name or Password is invalid";
 		echo "<script type='text/javascript'>alert('$error');</script>";	
-=======
 	include("connection.php");
 	session_start();
 	
@@ -95,7 +90,6 @@ if(isset($_POST['usrMail'],$_POST['usrPw'])){
 			$error = "Your Login Name or Password is invalid";
 			echo "<script type='text/javascript'>alert('$error');</script>";	
 		}
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 	}
 }
 ?>
