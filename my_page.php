@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
 	<meta charset="UTF-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<script src="script.js"></script>
-=======
  <meta charset="UTF-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
-
-
 
 <?php
 	include("connection.php");
@@ -36,11 +31,9 @@
 		$result = mysqli_query($dbc,$sql);	
 		$result1 = mysqli_query($dbc,$sql1);	
 			$test = mysqli_fetch_array($result1);	
-<<<<<<< HEAD
 			// var_dump($test);
-=======
+
 			var_dump($test);
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 		$_SESSION['userInfo'] = $test;
 		// var_dump($userInfo);
 		$_SESSION['login_user'] = $mail; 
@@ -103,11 +96,8 @@ div.tab button.active {
 	padding-bottom:700px;
 	color:#414051;
 	font-family: 'Raleway', sans-serif;
-<<<<<<< HEAD
 	background-color:#fff;
 	opacity:0.9;
-=======
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -133,13 +123,10 @@ input{
   <li><a href="index.php">Bokningar</a></li>
   <li><a href="about_us.php">Om oss</a></li>
   <li><a href="sign_up.php">Registrera</a></li>
-<<<<<<< HEAD
   <li><a href="login.php">Logga in</a></li>
 </ul>
-=======
 </ul>
 
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 <h1 class="statictext" id="header">Dina sidor</h1>
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'Mina_sidor')" id="defaultOpen">Mina sidor</button>
@@ -150,9 +137,7 @@ input{
 <div id="Mina_sidor" class="tabcontent">
 <<<<<<< HEAD
   <h3 class='statictext' onload= "home()" onclick="home()">Mina sidor</h3>
-=======
   <h3 class='statictext'>Mina sidor</h3>
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
   <?php
 	if(isset($_SESSION['logged_in'])){
 		$usr = $_SESSION['login_user'];
@@ -160,14 +145,11 @@ input{
 		if(isset($_SESSION['hashed_pw'])){
 			$pw = $_SESSION['hashed_pw'];
 		}
-	
-<<<<<<< HEAD
 		// var_dump($pw);
 	echo "<form method='post' action='my_page.php'>";
 	// echo "<script type='text/javascript'>alert('$msg');</script>";
 	foreach($dbc->query( "SELECT * FROM users WHERE usrMail = '$usr'") as $row){
 		echo "Mail: <input type='text' name='usrName' class='statictext' value='".$row['usrMail']."'><br>";
-=======
 	$usr = $_SESSION['login_user'];
 	$pw = $_SESSION['hashed_pw'];
 	// var_dump($pw);
@@ -175,24 +157,12 @@ input{
 	// echo "<script type='text/javascript'>alert('$msg');</script>";
 	foreach($dbc->query( "SELECT * FROM users WHERE usrMail = '$usr' and usrPw = '$pw'") as $row){
 		echo "Mail: <input type='text' name='usrName' class='statictext' value='".$row['usrMail']."'><br>";
-		// $password = $_POST['usrPw'];
-		// var_dump($password);
-		// $hashed = password_hash($password, PASSWORD_DEFAULT);
-		// $sql = "UPDATE users SET usrPw = '$hashed' WHERE usrPw = '$pw'";
-		// mysqli_query($dbc, $sql);
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 		echo "Förnamn <input type='text' name='fornamn' class='statictext' value='".$row['fornamn']."'><br>";
 		echo "Efternamn <input type='text' name='efternamn' class='statictext' value='".$row['efternamn']."'><br>";
 		echo "Kön <input type='text' name='kon' class='statictext' value='".$row['kon']."'><br>";
 		echo "Ålder <input type='text' class='statictext' name='alder' value='".$row['alder']."'><br>";
 		echo "Mobilnummer <input type='text' class='statictext' name='mobilnr' onkeypress='validate(event)' value='".$row['mobilnr']."'><br>"; /*Går inte att läsa av 0:or pga integer i databasen*/
 	}
-<<<<<<< HEAD
-=======
-	
-	
-	
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 	echo "<input type='submit' value='Uppdatera' id='update'>";
 	echo "</form>";
 	}
