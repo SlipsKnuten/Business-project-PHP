@@ -7,6 +7,7 @@
 	<script src="script.js"></script>
 </head>
 <body>
+<<<<<<< HEAD
 <ul>
   <li><a href="my_page.php">Mina Sidor</a></li>
   <li><a href="index.php">Bokningar</a></li>
@@ -14,6 +15,8 @@
   <li><a href="sign_up.php">Registrera</a></li>
   <li><a href="login.php">Logga in</a></li>
 </ul>
+=======
+>>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 <h1 align="center" id="header">Sign up</h1>
 <form method="post" action="">
   <div class="container">
@@ -32,6 +35,7 @@
   </div>
 </form>
 <?php	
+<<<<<<< HEAD
 include("connection.php");
 session_start();
 
@@ -60,6 +64,38 @@ if(isset($_POST['usrMail'],$_POST['usrPw'])){
 	} else {
 		$error = "Your Login Name or Password is invalid";
 		echo "<script type='text/javascript'>alert('$error');</script>";	
+=======
+	include("connection.php");
+	session_start();
+	
+	if(isset($_POST['usrMail'],$_POST['usrPw'])){
+		$mail = mysqli_real_escape_string($dbc,$_POST['usrMail']);
+		$password = mysqli_real_escape_string($dbc,$_POST['usrPw']);	
+		
+		$sql = "SELECT * FROM users WHERE usrMail = '$mail'";
+		$result = mysqli_query($dbc,$sql);
+		$count = mysqli_num_rows($result);
+		 
+		if($count == 0) {
+			$msg = "Kör hit";
+			
+			$_SESSION['login_user'] = $mail;
+			$options = [
+			'cost' => 11,
+			];
+			$hashed = password_hash($password, PASSWORD_BCRYPT, $options);
+			$_SESSION['hashed_pw'] = $hashed;
+			var_dump($_SESSION['hashed_pw']);
+			$sql2 = "INSERT INTO users(usrMail, usrPw) values('$mail','$hashed')";
+			$result = mysqli_query($dbc,$sql2);
+			var_dump($result);
+			header("location: login.php");
+			
+		} else {
+			$error = "Your Login Name or Password is invalid";
+			echo "<script type='text/javascript'>alert('$error');</script>";	
+		}
+>>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 	}
 }
 ?>
