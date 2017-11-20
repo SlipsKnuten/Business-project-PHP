@@ -1,7 +1,4 @@
-var cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
-var text = "";
-var i;
-for (i = 0; i < cars.length; i++) {
-    text += cars[i] + "<br>";
+function home (){
+	window.location("http://wwwlab.iit.his.se/a15gusbe/Grupp%205%20IT%20ORG/Hemsida/index.php");
+	alert("hej");
 }
-alert(text);
