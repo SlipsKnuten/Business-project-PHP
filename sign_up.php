@@ -1,97 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="script.js"></script>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 </head>
 <body>
-<ul>
-  <li><a href="my_page.php">Mina Sidor</a></li>
-  <li><a href="index.php">Bokningar</a></li>
-  <li><a href="about_us.php">Om oss</a></li>
-  <li><a href="sign_up.php">Registrera</a></li>
-  <li><a href="login.php">Logga in</a></li>
-</ul>
-<h1 align="center" id="header">Sign up</h1>
-<form method="post" action="">
-  <div class="container">
-    <label><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="usrMail" required>
-	
-	<label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="usrPw" required>
 
-    <input type="checkbox" checked="checked"> Remember me
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-     
+<h1 id="titel">Registrering</h1>
+
+<header>
+<ul id="nav">
+	<li class="navli"><a class="navcontent" href="index.php">Hem</a></li>
+	<li class="navli"><a class="navcontent" href="my_page.php">Mina sidor</a></li>
+	<li class="navli"><a class="navcontent" href="about_us.php">Om oss</a></li>
+	<li class="navli"><a class="navcontent" href="sign_up.php">Registrera</a></li>
+	<li class="navli"><a class="navcontent" href="login.php">Logga in</a></li>
+</ul>
+</header>
+<div id="wrapper">
+<br><br><br><br>
+<center>
+	<form method="post" action="">
+			<h1>Välj användaruppgifter</h1><br>
+		<div class="container">
+		<label><b>Skriv in din mail</b></label><br>
+		<p>Du kan bara registrera ett konto till en mailadress.<p>
+		<input class="input1" type="text" placeholder="Skriv in e-mail" name="usrMail" required>
+		<br><br>
+		<label><b>Välj lösenord</b></label><br>
+		<p>Lösenordet måste innehålla ett icke-alfanumeriska tecken<br> (specialtecken) (t.ex.!, $, #, %) och en siffra</p>
+		<input class="input1" type="password" placeholder="Välj Lösenord" name="usrPw" id="pass1" required>
+		<br><br>
+
 	<div class="clearfix">
-      <button type="submit" class="signupbtn">Sign Up</button>
+      <button type="submit" class="input" >Registrera</button>
     </div>
   </div>
-</form>
+</form></center>
 <?php	
 include("connection.php");
 session_start();
 
 if(isset($_POST['usrMail'],$_POST['usrPw'])){
 	$mail = mysqli_real_escape_string($dbc,$_POST['usrMail']);
-	$password = mysqli_real_escape_string($dbc,$_POST['usrPw']);	
+	$password = mysqli_real_escape_string($dbc,$_POST['usrPw']);
 	
-	$sql = "SELECT * FROM users WHERE usrMail = '$mail'";
+	
+	$sql = "SELECT usrMail FROM users WHERE usrMail = '$mail'";
 	$result = mysqli_query($dbc,$sql);
 	$count = mysqli_num_rows($result);
+	// print_r($_POST);
+	// var_dump($password);
+	$lel = strlen($password);
+
+	// if(preg_match('/[A-Z]/', $password)){
+ 
+	// Echo "hej";
+	// }
 	 
 	if($count == 0) {
-		// $msg = "Kör hit";
-		$_SESSION['login_user'] = $mail;
-		$options = [
-			'cost' => 11,
-		];
-		$hashed = password_hash($password, PASSWORD_BCRYPT, $options);
-		$_SESSION['hashed_pw'] = $hashed;
-		// var_dump($_SESSION['hashed_pw']);
-		$sql2 = "INSERT INTO users(usrMail, usrPw) values('$mail','$hashed')";
-		$result = mysqli_query($dbc,$sql2);
-		// var_dump($result);
-		header("location: login.php");
-		
-	} else {
-		$error = "Your Login Name or Password is invalid";
-		echo "<script type='text/javascript'>alert('$error');</script>";	
-	include("connection.php");
-	session_start();
-	
-	if(isset($_POST['usrMail'],$_POST['usrPw'])){
-		$mail = mysqli_real_escape_string($dbc,$_POST['usrMail']);
-		$password = mysqli_real_escape_string($dbc,$_POST['usrPw']);	
-		
-		$sql = "SELECT * FROM users WHERE usrMail = '$mail'";
-		$result = mysqli_query($dbc,$sql);
-		$count = mysqli_num_rows($result);
-		 
-		if($count == 0) {
-			$msg = "Kör hit";
-			
-			$_SESSION['login_user'] = $mail;
-			$options = [
-			'cost' => 11,
-			];
-			$hashed = password_hash($password, PASSWORD_BCRYPT, $options);
-			$_SESSION['hashed_pw'] = $hashed;
-			var_dump($_SESSION['hashed_pw']);
-			$sql2 = "INSERT INTO users(usrMail, usrPw) values('$mail','$hashed')";
-			$result = mysqli_query($dbc,$sql2);
-			var_dump($result);
-			header("location: login.php");
-			
-		} else {
-			$error = "Your Login Name or Password is invalid";
-			echo "<script type='text/javascript'>alert('$error');</script>";	
+		if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+			$error2 = "Invalid mail adress";
+			// echo "<script type='text/javascript'>alert('$error2');</script>";	
 		}
+	else{
+		if($lel >= 8){
+			if(preg_match('/[A-Z]/', $password)){
+				if (preg_match('/[\'^£$%&*()}{@#~?><>,!|=_+¬-åäöÄÅÖ]/', $password)){
+					// one or more of the 'special characters' found in $string
+					$_SESSION['login_user'] = $mail;
+					$options = [
+						'cost' => 11,
+					];
+					$hashed = password_hash($password, PASSWORD_BCRYPT, $options);
+					$_SESSION['hashed_pw'] = $hashed;
+					// var_dump($_SESSION['hashed_pw']);
+					$sql2 = "INSERT INTO users(usrMail, usrPw) values('$mail','$hashed')";
+					$result = mysqli_query($dbc,$sql2);
+					// var_dump($result);
+					header("location: login.php");
+				}
+				else{
+					 echo "<script type='text/javascript'>alert('Ditt lösenord uppfyller inte lösenordskraven');</script>";	
+				}
+			}
+			else{
+				 echo "<script type='text/javascript'>alert('Ditt lösenord uppfyller inte lösenordskraven');</script>";
+			}		}
+		else{
+				 echo "<script type='text/javascript'>alert('Ditt lösenord uppfyller inte lösenordskraven');</script>";	
+		}	
+	}
+
 	}
 }
 ?>
+
+</div>
 </body>
+<footer>
+<br><br>
+Skidloppet AB Box 312 770 76 Hedemora || info@skidloppetab.com || Tel: 0500 - 666 66
+</footer>
 </html>

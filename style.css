@@ -1,240 +1,1128 @@
-<<<<<<< HEAD
-body {font-family: "Lato", sans-serif;}
-=======
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
-/* Full-width input fields */
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+*{
+	padding:0px;
+	margin:0px;
+	font-family: 'roboto', monospace;
 }
-
-/* Set a style for all buttons */
-.signupbtn {
-    background-color: #587092;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-	font-family: 'Raleway', sans-serif;
-	
-}
-button:hover {
-    opacity: 0.8;
-}
-/* Add padding to container elements */
-.container {
-	max-width: 30%;
-	margin:auto;
-	font-family: 'Raleway', sans-serif;
-}
-
-/* Clear floats */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-.header{
-	font-family: 'Raleway', sans-serif;
-}
-#form_mina{
-	padding:20px;
-}
-body{
-	min-width:100%;
-	min-height:100%;
-	wh:100%;
+body {
+	font-family: 'roboto', sans-serif; 
+	margin: 0px;
 	background: url(pictures/test.jpeg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 }
+ul{
+	list-style:none;
+}
+
+a{
+	color:black;
+}
+
+a:visited{
+	color:black;
+}
+/*Här startar sign-up sidan*/
+
+.signupbtn{
+	background-color: #587092; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	width:50%;
+}
+
+.signupbtn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.container {
+	color: black;
+}
+
+#dropdown{
+    color: black;
+    padding: 12px;
+    font-size: 12px;
+    cursor: pointer;
+	max-width:60%;
+}
+
+
+
+/*Här slutar sign-up sidan*/
+
+/* Första sida */
+#titel{
+	text-align:center;
+	padding-bottom:50px;
+	padding-top:50px;
+	font-size:3em;
+	letter-spacing: 12px;
+	color:white;
+}
+header{
+	background-color: #587092;
+	color:#fff;
+	max-width:60%;
+	min-height:60px;
+	margin:auto;
+}
+/*navbar*/
+#nav{
+	list-style-type:none;
+	text-align:center;
+}
+.navli{
+	display:inline-block;
+	text-align: center;
+	
+}
+.navcontent{
+	display:block;
+	margin:15px;
+	margin-top:20px;
+	font-size:1.1em;
+	text-align:center;
+}
+.navli:hover{
+	background-color: #738aaa;
+	transition:0.5s;
+}
+.navcontent:link {
+	color:white;
+	text-decoration:none;
+}
+
+.navcontent:visited {
+	color:white;
+	text-decoration:none;
+}
+/*navbar slut*/
+/*Här startar index sidan*/
 #wrapper{
 	background-color:#fff;
-<<<<<<< HEAD
-	opacity: 0.9;
-=======
-	opacity: 0.7;
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
-	width: 500px;
-	height: 500px;
-	min-width: 70%;
-	min-height: 70%;
+	max-width: 60%;
 	margin: auto;
-	filter: alpha(opacity=30);
-	padding-bottom:500px;
+	height:2000px;
 }
-#header{
-	font-family: 'Raleway', sans-serif;
+#wrapperpaymentconfirm{
+	background-color:#fff;
+	max-width: 60%;
+	margin: auto;
+	height:700px;
+}
+
+.pics{
+	list-style-type:none;
+	text-align: center;
+}
+.cards{
+	display:inline-block;
+	margin:20px;
+	position:relative;
+}
+.cards:hover .centered{
+	display:block;
+	filter: blur(0px);
+
+}
+.cards:hover{
+	filter: grayscale(100%);
+	transition:1s;
+}
+.centered{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	display:none;
 	color:#fff;
+	/* font-weight:bold; */
+	font-size: 2em;
+	letter-spacing: 8px;
+}
+.pic{
+	display:inline-block;
+	font-family: 'Roboto', sans-serif;
+	padding-top: 10px;
+	text-align: center;
+	padding-bottom:10px;
+}	
+.imgfp{
+	width:230px;
+	display:inline;
+	height:230px;
+}
+#map img{
 	margin:auto;
 	text-align:center;
-	padding-top:100px;
-	padding-bottom:100px;
-	font-size:900%;
+	max-width:80%;
+}
+#map {
+	margin-top:100px;
+	margin-left:183px;
+}
+
+/* #loppform{ */
+	/* margin-left: auto; */
+	/* margin-right: auto; */
+	/* font-size:20px;	 */
+	/* width:80%; */
+/* } */
+
+
+
+footer{
+	margin:auto;
+	max-width:60%;
+	background-color:#587092;
+	height:100px;
+	text-align:center;
+	font-size:20px;
+	color:white;
+}
+
+#textovanfor{
+	font-family: 'Roboto', sans-serif; 
+	font-size:22px;
+	text-align:center;
+}
+
+/*Här slutar index sidan*/
+
+/* My page börjar*/
+
+
+.tab{
+	background-color:#588D92;
+	margin:auto;
+	text-align:center;
+	max-width:100%;
+	border-bottom:0.5 solid black;
+}
+.tablinks{
+	border:none;
+	font-size:1em;
+	margin:10px;
+	background-color:#588D92;
+}
+.tablinks:hover{
+	transition:0.5s;
+	color:white;
+	cursor:pointer;
+}
+.tabcontent{
+	margin:auto;
+	max-width:80%;
+}
+
+#wrapper_my_page{
+	background-color:#fff;
+	max-width: 60%;
+	margin: auto;
+	height:2300px;
+	
+	
+	
+}
+
+.tabell_my_page {
+	border-collapse: collapse;
+	border:1px solid black;
+	margin:auto;
+	margin-bottom: 50px;
+	padding-top: 25px;
+	padding-left: 25px;
+
 	}
-.navbar{
 
-	list-style-type:none;
+.table_head_my_page{
+	/* font-weight:bold; */
+	padding:10px;
+	color:black;
+	
 }
-.nav{
+
+
+.tabellrad{
+	color:black;
+	padding:20px;
+	background-color:#5e7ba3;
+}
+
+.tabellinfo_my_page{
+	padding:10px;
+	border:1px solid black;
+	cellspacing: 10px;
+	text-align: center;
+}
+
+#my_page_upd{
+	margin:auto;
+	max-width:90%;
+	
+}
+
+/*.radio-btns {
+	color:red;
+	border:3px solid black;
+}
+
+.radio{
+	size:14px;
+}*/
+#bookingForm{
+	width:80%;
+}
+#loppform{
+	border-collapse:collapse;
+	text-align:center;
+	border-bottom: 1px solid #ddd;
+	width:100%;
+}
+
+#loppform th{
+	background-color:#588D92;
+	font-size:1.5em;
+	padding:10px;
+}
+
+#bookingForm{
+	width:80%;
+}
+#loppformstart{
+	border-collapse:collapse;
+	text-align:center;
+	border-bottom: 1px solid #ddd;
+	width:60%;
+}
+
+#loppformstart th{
+	background-color:#588D92;
+	font-size:1em;
+	padding:10px;
+}
+
+#loppformstart tr{
+	text-align:left;
+	border-bottom:1px solid black;
+	
+}
+#loppformstart td{
+	padding:5px;
+}
+
+.input {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+	display:inline-block;
+}
+
+.input:hover{
+	background-color:#657fa5;
+	cursor:pointer;
+}
+
+button.input {
+    background-color:#587092;
+	width: 55%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+	border:none;
+	color:white;
+}
+input.input {
+    background-color:#587092;
+	width: 55%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+	border:none;
+	color:white;
+}
+.input1{
+	width: 55%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+	display:inline-block;
+}
+
+
+.input2{
+	width:60%;
+	padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+	display:inline-block;
+	
+}
+#dropdown_mypage{
+	color: black;
+    padding: 12px;
+    font-size: 12px;
+    cursor: pointer;
+	width:55%;
+}
+
+#dropdown1{
+	width:55%;
+	padding:12px;
+	font-size:12px;
+	cursor:pointer;
+}
+
+#dropdown2{
+	width:60%;
+	padding:12px;
+	font-size:12px;
+	cursor:pointer;
+}
+
+#minaLopp{
+	display:inline-block;	
+	border-collapse:collapse;
+	border-bottom: 1px solid #ddd;
+	text-align:center;
+}
+
+#minaLopp th{
+	background-color:#588D92;
+	padding:10px;
+	
+}
+
+#minaLopp td{
+	padding:10px;
+}
+
+#minaLopp tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+.statistikUsr{
+	background-color:white;
+	border-bottom:1px solid black;
+	display:block;
+	margin-top:40px;
+	text-align:center;
+	
+} 
+.usrInfoMyPage{
 	display:inline;
-	padding: 15px;
-	font-family: 'Raleway', sans-serif;
-	float:right;
+	padding:5px;
+	font-size:2em;
+}
+/* My page slutar*/
+/* booking_skidor */
+#tillval{
+	width: 100%;
+	position:relative;
+	overflow:auto;
+	left:-1px;
 }
 
-a:link {
-    text-decoration: none;
-	color:black;
+#column{
+	/* width: 50%;  */
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	/* margin-bottom: 200px; */
+	/* float:left; */
 }
 
-a:visited {
-    text-decoration: none;
+.tabellrad1{
 	color:black;
+	padding:20px;
+	font-size:30px;
+	
 }
-#navcomp{
-	list-style-type:none;
+
+.tabellinfo1 {
+	padding:10px;
+}
+
+.knapp1{
+	height: 25px;
+	width: 25px;
+	cursor:pointer;
+	background-color:red;
+}
+
+
+/* booking_skidor */
+
+[class*="col-"] {
+    width: 100%;
+}
+
+/*Back-office start*/
+
+#diagram_valla{
+	padding: 10%;
+	max-height: 500px;
+	max-width: 575px;
+}
+
+#tillval_diagram_valla{
+	padding: 10%;
+	max-height: 500px;
+	max-width: 575px;
+	
+}
+
+#diagram-langning{
+	padding: 10%;
+	max-height: 500px;
+	max-width: 575px;
+	
+}
+
+#tillval_diagram-langning{
+	padding: 10%;
+	max-height: 500px;
+	max-width: 575px;
+	
+}
+
+#diagram-diplom{
+	padding: 10%;
+	max-height: 500px;
+	max-width: 575px;
+}
+
+#tillval_diagram-diplom{
+	padding: 10%;
+	max-height: 500px;
+	max-width: 575px;
+	
+}
+
+#diagram-forsakring{
+	padding: 10%;
+	max-height: 500px;
+	max-width: 575px;
+}
+
+#tillval_diagram-forsakring{
+	padding: 10%;
+	max-height: 500px;
+	max-width: 575px;
+	
+}
+
+#diagram-biljett{
+	padding: 10%;
+	max-height: 500px;
+	max-width: 575px;
+}
+
+#tillval_diagram-biljett{
+	padding: 10%;
+	max-height: 500px;
+	max-width: 575px;
+	
+}
+
+#wrapper_tillval_skidor{
+	background-color:#fff;
+	max-width: 60%;
+	margin: auto;
+	height:5000px;
+}
+
+#wrapper_backoffice{
+	background-color:#fff;
+	max-width: 60%;
+	margin: auto;
+	height:5000px;
+}
+.tabell {
+	border-collapse: collapse;
+	max-width:70%;
 	margin:auto;
 }
-.comps{ /*https://pixabay.com/p-1095162/?no_redirect*/
-	border-radius:50%;
-	width:500px;
-	width:500px;
-	min-width:200px;
-	min-height:200px;
+
+
+.tabellinfo {
+	padding:10px;
+	border:1px solid black;
+	width:70%;
+}
+
+
+h1, h2, h3{
+	text-align:center;
+}
+
+h5 {
+	font-size:20px;
+}
+/*navbar-backoffice*/
+#navback{
+	list-style-type:none;
+	text-align:center;
+	height:80px;
+}
+
+.navliback{
+	display:inline-block;
+	width:100px;
+	text-align: center;
+	color:white;
+	font-size:14px;
+}
+
+.navcontentback{
+	display:block;
+	height:20px;
+	width:120px;
+	margin-top:30px;
+	font-size:1.2em;
+	color:white;
+
+}
+.navcontentback:link {
+	text-decoration:none;
+}
+
+.navliback:hover a{
+	color:black;
+	font-family:helvetica;
+	/* font-weight:bold; */
+}
+
+
+
+/* Det här är styling för backoffice-login formuläret */
+.container-back-office-login {
+	color: black;
+	text-align: center;	
+}
+
+
+
+.backofficeinput[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+	display:inline-block;
 	
-	background-color:black;
-	border:2px solid;
-	border-color:black;
+}
+
+
+
+.backofficeinput[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+/* #valjknapp{ */
+	/* background-color:#587092; */
+    /* border: none; */
+    /* color: white; */
+    /* padding: 14px; */
+    /* text-align: center; */
+    /* text-decoration: none; */
+    /* display: inline-block; */
+    /* font-size: 12px; */
+    /* margin: 4px 2px; */
+    /* -webkit-transition-duration: 0.4s; /* Safari */ */
+    /* transition-duration: 0.4s; */
+    /* cursor: pointer; */
+	/* margin-left:10px; */
+	/* float: right; */
+/* } */
+
+/* #valjknapp:hover{ */
+	/* background-color:#657fa5; */
+	/* cursor:pointer; */
+/* } */
+
+/* .BO_valjknapp{ */
+	/* background-color:#587092; */
+    /* border: none; */
+    /* color: white; */
+    /* padding: 14px; */
+    /* text-align: center; */
+    /* text-decoration: none; */
+    /* display: inline-block; */
+    /* font-size: 12px; */
+    /* margin: 4px 2px; */
+    /* -webkit-transition-duration: 0.4s; /* Safari */ */
+    /* transition-duration: 0.4s; */
+    /* cursor: pointer; */
+	/* margin-left:10px; */
+/* } */
+
+/* .BO_valjknapp:hover{ */
+	/* background-color:#657fa5; */
+	/* cursor:pointer; */
+/* } */
+
+/* #valjknapp1{ */
+    /* cursor: pointer; */
+	/* margin-right:15px; */
+	/* float: right; */
+/* } */
+
+/* #valjknapp1:hover{ */
+	/* cursor:pointer; */
+/* } */
+
+/* #angraknapp{ */
+    /* cursor: pointer; */
+	/* margin-left:15px; */
+	/* float:left; */
+	
+/* } */
+
+/* #angraknapp:hover { */
+	/* cursor:pointer; */
+/* } */
+/*---------------------------MINA SIDOR STATISTIK SÖKKNAPP-------------------------------------------*/
+
+.inputJamfor{
+	background-color:#587092;
+	margin-left:25px;
+	width:20%;
+	padding: 12px 20px;
+   border:none;
+	display:inline-block;
+	color:white;
+}
+
+.inputJamfor:hover{
+	background-color:#657fa5;
+	cursor:pointer;
+}
+}
+
+/* Här slutar styling för backoffice-login formuläret */
+
+/* Här börjar styling nya lopp formulär*/
+.backoffice  {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+	background-color:#587092;
+	color:white;
+	border:none;
+}
+
+.backoffice:hover{
+	background-color:#657fa5;
+	cursor:pointer;
+}
+
+
+
+.backoffice input[type=submit]:hover {
+    background-color: #485b75;
+}
+
+.backoffice input[type=submit1]:hover {
+    background-color: #485b75;
+}
+
+.backoffice input[type=reset]:hover {
+    background-color: #485b75;
+	box-shadow:
+}
+
+#nyalopp{
+	margin:auto;
+	max-width:40%;
+	display:inline-block;
+}
+
+div #nyalopp label{
+	display:inline-block;
+	font-size:18px;
+}
+
+div #inloggadmin label{
+	display:inline-block;
+	font-size:18px;
+	
+}
+
+
+
+/* Här slutar styling nya lopp formulär*/
+
+
+/*Här börjar styling på OM OSS*/
+
+#fakta{
+	color:red;
+	border:1px solid black;
+	text-align:left;
+	font-size:18px;
+}
+
+
+/*Här slutar styling på OM OSS*/
+
+
+/*här start startar styling tillvals sidorna*/
+
+.items{
+	position: relative;
+    transform: translate(-50%, -50%);
 	display:inline;
-	background-image:url(pictures/123.jpg);
+	color:black;
+	/* font-weight:bold; */
+	font-size: 1em;
+	text-align:center;
 }
-
-.tab {
-    float: left;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-    width: 30%;
-    height: 300px;
-	margin-top:100px;
-	margin-left:130px;
-	margin-bottom:1000px;
-	padding-bottom:700px;
-}
-
-.tab_bokningar {
-   
-    border: 1px solid #ddd;
-    background-color: #ddd;
-    width: 70%;
-    height: 300px;
-	margin-top:100px;
-	margin-left:auto;
-	margin-right: auto;
-	margin-bottom:1000px;
-	padding-bottom:700px;
+.imgs{
+	position:relative;
+	width:60px;
+	height:60px;
+	display:inline;
 }
 
 
-
-ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		}
-
-	li {
-		display: inline;
-		}
-		
-		
-	a {
+div#row label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: relative; /* Remove input from document flow */
+}
+div#row label > input + img{ /* IMAGE STYLES */
+  cursor:pointer;
+  border:2px solid transparent;
+}
+div#row label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+	border:2px solid black;
+	transition:0.5s;
+	padding:5px;
+	border-radius:5px;
+}
+div#row label{
+	text-align:center;
+	margin:auto;
+}
+div#row form {
+	text-align:center;
+}
+.tillvalUsr{
+	display:block;
+	text-align:center;
+}
+.usrInfoTillVal{
+	display:inline;
+	border-bottom:1px solid black;
+	padding:5px;
+	font-weight:none;
+}
+.next {
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
+	border:none;
+	float:right;
+	background-color: #587092;
+    color: white;
 }
-<<<<<<< HEAD
-=======
-
-a:hover {
+.next:hover {
     background-color: #ddd;
     color: black;
 }
 
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
 .previous {
-    background-color: #f1f1f1;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+	border:none;
+	float:left;
+	background-color: #587092;
+    color: white;
+}
+.previous:hover {
+    background-color: #ddd;
     color: black;
 }
 
-.next {
-    background-color: #4CAF50;
-    color: white;
+/*--------------------------TILLVAL LÖPNING/SKIDOR/MTB--------------------------------*/
+#tillval_lop th{
+	/* font-weight:normal; */
+	font-size:.5em;
+}
+#tillval_lop{
+	text-align:center;
+	width:80%;
+	margin:auto;
+	border-bottom:2px solid black;
 }
 
-<<<<<<< HEAD
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		}
+.tillvalLop1{
+	width:30%;
+	
+}
 
-	li {
-		display: inline;
-		}
-		
-	div.gallery {
-	margin-left: 175px;
-    
-	border-radius:50%;
-    border: 1px solid #ccc;
-    float: left;
-    width: 180px;
+.tillvalLop2{
+	width:50px;
+	text-align:center;
+}
+
+.beskrivning{
+	font-size:14px;
+	font-style:italic;
+}
+
+
+
+/*betala*/
+.betalaTable{
+	border-collapse:seperate;
+	border-bottom:1px solid black;	
+	border-spacing:15px;
+}
+.usrBetala{
+	display:block;
+	text-align:center;
+}
+
+.usrInfoBetala{
+	display:inline;
+	border-bottom:1px solid black;
+	font-size:1.5em;
+	padding-right:8px;
+}
+
+.usrInfoBetala1{
+	display:inline;
+	font-size:1.1em;
+	padding-right:8px;
+}
+#payment{
+	display:none;
+}
+#swish{
+	display:none;
+}
+#card{
+	display:none;
+}
+
+#cardBtn{
+	width:120px;
+	height:60px;
+	color:white;
+}
+
+#cardBtn:hover{
+	transition:0.5s;
+	background-color:#DDD;
+	color:black;
+}
+
+#swishBtn{
+	width:120px;
+	height:60px;
+	color:white;
+}
+
+#swishBtn:hover{
+	transition:0.5s;
+	background-color:#DDD;
+	color:black;
+}
+
+.inputCard{
+	width: 33%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+	display:inline-block;
+}
+
+.payment label{
+	text-align:left;
+}
+
+.payBtn{
+	width:33%;
+	padding:12px;
+	background-color:#587092;
+	border:none;
+	color:white;
+}
+.payBtn:hover{
+	background-color:#DDD;
+	color:black;
+}
+/*betala slut*/
+
+
+
+/*här slutar startar styling tillvals sidorna*/
+
+/*Här startar mobilanpassningen*/
+@media only screen and (min-width: 300px) and (max-width: 700px){
+    For mobile:
+    .col-1-s {width: 8.33%;}
+    .col-2-s {width: 16.66%;}
+    .col-3-s {width: 25%;}
+    .col-4-s {width: 33.33%;}
+    .col-5-s {width: 41.66%;}
+    .col-6-s {width: 50%;}
+    .col-7-s {width: 58.33%;}
+    .col-8-s {width: 66.66%;}
+    .col-9-s {width: 75%;}
+    .col-10-s {width: 83.33%;}
+    .col-11-s {width: 91.66%;}
+    .col-12-s {width: 100%;}
+	
+	#wrapper{
+		min-width: 100%;
+
+		height:3500px;
+	}
+	#wrapper_my_page{
+
+	min-width: 100%;
+
+
+	
+	
+	
+}
+	#titel {
+		display: none;
 	}
 	
-
-div.gallery:hover {
-    border: 1px solid #777;
+	header{
+		min-width: 100%;
+		font-size:0.75em;
+		padding-bottom:10px;
+	}
+	.navcontent{
+		height:30px;
+		margin-top:20px;
+		
+	}
+	#nav {
+		font-size: 1.5em;
+		min-width: 100%;
+	}
+	footer{
+		min-width:100%;
+		height:150px;
+	}
+	.pic{
+		padding-bottom:40px;
+		padding-top:40px;	
+	}
+	input[type=text] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+	display:inline-block;
 	}
 
-div.gallery img {
-    width: 100%;
-    height: auto;
-	margin:25px;
-	background-size: cover;
-	}
+	input[type=password] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
 
-div.desc {
-    width: 180px;
-    text-align: center;
-	}
-.imgfp{
-	border-radius:50%;
-	width:300px;
-	height:300px;
-	display:inline;
-	opacity:1;
-}
-.pics{
 
-	list-style-type:none;
 }
-.pic{
-	display:inline;
-	padding: 15px;
-	font-family: 'Raleway', sans-serif;
-	float:left;
-	margin-left:60px;
-	margin-top:100px;
+
+@media only screen and (min-width: 701px) and (max-width: 1079px) {
+    For tablets:
+    .col-1-m {width: 8.33%;}
+    .col-2-m {width: 16.66%;}
+    .col-3-m {width: 25%;}
+    .col-4-m {width: 33.33%;}
+    .col-5-m {width: 41.66%;}
+    .col-6-m {width: 50%;}
+    .col-7-m {width: 58.33%;}
+    .col-8-m {width: 66.66%;}
+    .col-9-m {width: 75%;}
+    .col-10-m {width: 83.33%;}
+    .col-11-m {width: 91.66%;}
+    .col-12-m {width: 100%;}
+	
+	#titel {
+		font-size: 3em;
+		text-align: center;
+		color:#fff;
+		margin:auto;
+		padding-bottom:100px;
+		padding-top:100px;
+	}
+	#wrapper{
+		min-width: 70%;
+		height:2700px;
+	}
+	#wrapper_my_page{
+
+	max-width: 70%;
+
+	height:2300px;
+	
+	
+	
 }
-=======
-#summarize
->>>>>>> 62183ce3ebc2644cadc11a1b8c3b256c7efb29e3
+	header{
+		min-width: 70%;
+	}
+	footer{
+		min-width:70%;
+	}
+	/* #nav { */
+		/* font-size: 1.5em; */
+	/* } */
+	.pic{
+		padding-bottom:40px;
+		padding-top:40px;	
+	}
+	#map{
+		margin-left:123px;
+	}
+@media only screen and (min-width: 1080px) {
+    For desktop:
+    .col-1-b {width: 8.33%;}
+    .col-2-b {width: 16.66%;}
+    .col-3-b {width: 25%;}
+    .col-4-b {width: 33.33%;}
+    .col-5-b {width: 41.66%;}
+    .col-6-b {width: 50%;}
+    .col-7-b {width: 58.33%;}
+    .col-8-b {width: 66.66%;}
+    .col-9-b {width: 75%;}
+    .col-10-b {width: 83.33%;}
+    .col-11-b {width: 91.66%;}
+    .col-12-b {width: 100%;}
+	
+	#titel {
+		font-size:4em;
+		color:#fff;
+		margin:auto;
+		text-align:center;
+		padding-bottom:100px;
+		padding-top:100px;
+	}
+	
+	#nav {
+		font-size: 1.5em;
+	}
+	
+}

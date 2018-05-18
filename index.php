@@ -3,174 +3,179 @@
 <head>
 	<meta charset="UTF-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="script.js"></script>
-	<title>Home page</title>
-  <meta charset="UTF-8">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  
-  
-<title>Title of the document</title>
+	<title>Home</title>
+<title>Home</title>
 </head>
 
 <?php
 session_start();
 	if(isset($_SESSION['logged_in'])){
-		$fruit = $_SESSION['logged_in'];
-	}
-		if(isset($_SESSION['logged_in'])){
-		$test = $_SESSION['logged_in'];
+		$loggedIn = $_SESSION['logged_in'];
 	}
 ?>
-
-<script type="text/javascript">
-    function Check(typ){
-	// alert(typ);
-	if(<?= $fruit; ?> == 1 && typ == "lop"){
-		window.location = "http://wwwlab.iit.his.se/a16henme/webb_utv/booking_lopning.php";
-			// alert("You are logged in!");
-		}
-	else if(<?= $fruit; ?> == 1 && typ == "mtb"){
-		window.location = "http://wwwlab.iit.his.se/a16henme/webb_utv/booking_mtb.php";
-	}
-	else if(<?= $fruit; ?> == 1 && typ == "skid"){
-		window.location = "http://wwwlab.iit.his.se/a16henme/webb_utv/booking_skidor.php";
-	}
-	else{
-			alert("You are not logged in!");
-	}
-?>
-
-<?php
-    $fruit = $_SESSION['logged_in'];
-    
-?>
-
-<script type="text/javascript">
-     function Check(){
-		 
-	if		(<?= $fruit; ?> == 1){
-			window.location = "http://wwwlab.iit.his.se/a16henme/webb_utv/booking_skidor.php";
-			alert("You are logged in!");
-			}
-	
-	else{
-			alert("You are not logged in!");
-			}
-	}
-</script>
-
-
-
-
-<style>
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-		}
-
-	li {
-		display: inline;
-		}
-		
-	div.gallery {
-	margin-left: 175px;
-    
-	border-radius:50%;
-    border: 1px solid #ccc;
-    float: left;
-    width: 180px;
-	}
-	
-
-div.gallery:hover {
-    border: 1px solid #777;
-	}
-
-div.gallery img {
-    width: 100%;
-    height: auto;
-	margin:25px;
-	background-size: cover;
-	}
-
-div.desc {
-    width: 180px;
-    text-align: center;
-	}
-</style>
 
 <body>
+<h1 id="titel">Skidloppet AB</h1>
 
-<ul>
-  <li><a href="my_page.php">Mina Sidor</a></li>
-  <li><a href="index.php">Bokningar</a></li>
-  <li><a href="about_us.php">Om oss</a></li>
-  <li><a href="sign_up.php">Registrera</a></li>
-  <li><a href="login.php">Logga in</a></li>
+<header>
+<ul id="nav">
+	<li class="navli"><a class="navcontent" href="index.php">Hem/Anmälan</a></li>
+	<li class="navli"><a class="navcontent" href="my_page.php">Mina sidor</a></li>
+	<li class="navli"><a class="navcontent" href="about_us.php">Om oss</a></li>
+	<li class="navli"><a class="navcontent" href="sign_up.php">Registrera</a></li>
+	<li class="navli"><a class="navcontent" href="login.php">Logga in</a></li>
+	<li class="navli"><a href="index_en.php"><img border="0" alt="English Flag" src="pictures/english.jpg" width="35" height="25"></a></li>
 </ul>
+</header>
 
 
-<h1 id="header">Våra lopp</h1>
 
-<div id="wrapper">
+<div id="wrapper" class="col-12-m">
+
+<?php
+$_SESSION['tshirt_test'] = '7';
+// echo $_SESSION['tshirt_test'];
+
+// print_r($_SESSION['login_user']);
+?>
+<br>
+<div id="textovanfor">
+<p>Klicka på någon av bilderna för att välja typ av lopp</p>
+</div>
 	<ul class="pics">
 		<li class="pic">
-		<a onclick="Check('lop')">
-			<img src="pictures/lopning.jpeg" alt="Trolltunga Norway" class="imgfp">
-		</a>
-			<p class="desc">Klicka här för våra löplopp</p>
+			<a href="booking_lopning.php">
+				<div class="cards">
+				<div class="centered">Löpning</div>
+					<img src="pictures/lopning.jpeg" alt="Trolltunga Norway" class="imgfp"><h3>Löpning</h3>
+				</div>	
+			</a>
 		</li>
-
+		
 		<li class="pic">
-		<a href="booking_mtb.php" onclick="Check('mtb')">
-			<img src="pictures/mtb.jpg" alt="Forest" class="imgfp">
-		</a>
-			<p class="desc">Klicka här för våra moutainbikelopp</p>
+			<a href="booking_mtb.php">
+				<div class="cards">
+				<div class="centered">MTB</div>
+					<img src="pictures/mtb.jpg" alt="Forest" class="imgfp"><h3>Mountainbike</h3>
+				</div>
+			</a>
 		</li>
-
+		
 		<li class="pic">
-		<a onclick="Check('skid')">
-			<img src="pictures/skidor.jpeg" alt="Northern Lights" class="imgfp">
-		</a>
-			<p class="desc">klicka för våra skidlopp</p>
+			<a href="booking_skidor.php">
+				<div class="cards">
+				<div class="centered">Skidor</div>
+					<img src="pictures/skidor.jpeg" alt="Northern Lights" class="imgfp"><h3>Skidåkning</h3>
+				</div>
+			</a>
 		</li>
 	</ul>
-</div>
-<div class="gallery">
 	
-  <a href="booking_lopning.php">
-   <img src="pictures/lopning.jpeg" alt="Trolltunga Norway" width="300" height="300">
-   
-  </a>
-  <div class="desc">Klicka här för våra löplopp</div>
-	
-  </div>
+<center><table id="loppformstart"><br><br>
 
-<div class="gallery">
-  <a href="booking_mtb.php">
-    <img src="pictures/mtb.jpg" alt="Forest" width="300" height="300">
-  </a>
-  <div class="desc">Klicka här för våra moutainbikelopp</div>
+<br><h4>Information om kommande skidlopp</h4><br>
+  <tr>
+    <th>Loppnamn --- Typ --- Pris</th>
+    <th> Starttid</th>
+  </tr>
+
+  <tr>
+    <td>Dalloppet --- Öppet spår --- 500kr / €50</td>
+    <td>2018-01-07 08:00:00</td>
+  </tr>
+  <tr>
+    <td>Dalloppet  Halv  250kr / €25</td>
+    <td>2018-01-08 08:00:00</td>
+  </tr>
+  <tr>
+    <td>Dalloppet  Tredjedel  125kr/ €12,5</td>
+    <td>2018-01-08 08:00:00</td>
+  </tr>
+  <tr>
+    <td>Stafetten  Full  1000kr / €100</td>
+    <td>2018-01-08 08:00:00</td>
+  </tr>
+  <tr>
+    <td>Faluloppet  Full  500kr / €50</td>
+    <td>2018-12-14 08:00:00</td>
+  </tr>
+  </table>
+  </center>
+  
+<center><table id="loppformstart"><br>
+
+<h4>Information om kommande MTBlopp</h4><br>
+  <tr>
+    <th>Loppnamn --- Typ --- Pris</th>
+    <th> Starttid</th>
+  </tr>
+
+  <tr>
+    <td>Dalloppet  Kvart  100kr / €10</td>
+    <td>2018-07-07 08:00:00</td>
+  </tr>
+  <tr>
+    <td>Dalloppet  Halv  200kr / €20</td>
+    <td>2018-07-07 08:00:00</td>
+  </tr>
+  <tr>
+    <td>Dalloppet  Full  400kr / €40</td>
+    <td>2018-07-08 08:00:00</td>
+  </tr>
+    <tr>
+    <td>Stafetten  Full  400kr / €40</td>
+    <td>2018-07-08 08:00:00</td>
+  </tr>
+  <tr>
+    <td>Halloppet  Full  400kr / €40</td>
+    <td>2018-12-14 08:00:00</td>
+  </tr>
+  </table>
+  </center>
+  
+  	<center><table id="loppformstart"><br>
+
+<h4>Information om kommande löplopp</h4><br>
+  <tr>
+    <th>Loppnamn --- Typ --- Pris</th>
+    <th> Starttid</th>
+  </tr>
+
+  <tr>
+    <td>Dalloppet  Full  400kr / €40</td>
+    <td>2018-05-07 08:00:00</td>
+  </tr>
+  <tr>
+    <td>Dalloppet  Halv  200kr / €20</td>
+    <td>2018-05-07 08:00:00</td>
+  </tr>
+  <tr>
+    <td>Dalloppet  Kvart  100kr / €10</td>
+    <td>2018-05-08 08:00:00</td>
+  </tr>
+  <tr>
+    <td>Stafetten  Full  400kr / €40</td>
+    <td>2018-05-08 08:00:00</td>
+  </tr>
+  <tr>
+    <td>Kalloppet  Full  400kr / €40</td>
+    <td>2018-12-14 08:00:00</td>
+  </tr>
+  </table>
+  </center>
+  
+	<div id="map">
+		<img src="pictures/karta.jpg.svg">
+	</div>
+<h3>Karta över loppet</h3>
 </div>
 
-<div class="gallery">
-  <a onclick="Check()">
-  
-  
-  
-    <img src="pictures/skidor.jpeg" alt="Northern Lights" width="300" height="300">
-  </a>
-  <div class="desc">klicka för våra skidlopp</div>
-</div>
-
-  <?php
-  $test = $_SESSION['logged_in'];
-  var_dump($test);
-  ?>
 </body>
-
+<footer>
+<br><br>
+Skidloppet AB Box 312 770 76 Hedemora || info@skidloppetab.com || Tel: 0500 - 666 66
+</footer>
 </html>
